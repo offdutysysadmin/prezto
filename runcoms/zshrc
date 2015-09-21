@@ -21,5 +21,8 @@ unsetopt correct_all
 # pyenv
 if which python > /dev/null; then eval "$(pyenv init -)"; fi
 
+# rvm
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
 # Customize to your needs...
 alias t="/usr/local/bin/todo.sh -t"
