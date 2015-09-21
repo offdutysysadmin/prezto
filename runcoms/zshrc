@@ -10,4 +10,16 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+# Load work specific things
+if [[ -s "$HOME/.zlocal" ]]; then
+    source "$HOME/.zlocal"
+fi
+
+unsetopt correct
+unsetopt correct_all
+
+# pyenv
+if which python > /dev/null; then eval "$(pyenv init -)"; fi
+
 # Customize to your needs...
+alias t="/usr/local/bin/todo.sh -t"
